@@ -15,8 +15,7 @@ public class EmployeeService {
 	    // 1. Find out the sum of salary of all employees.
 	    
 	    double totalSalary = employees.stream()
-	            .mapToDouble(Employee::getSalary)
-	            .sum();
+	            .collect(Collectors.summingDouble(Employee::getSalary));
 	    System.out.println("Total Salary of All Employees: " + totalSalary);
 	
 	
