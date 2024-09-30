@@ -48,7 +48,7 @@ public class LibraryHack {
                         System.out.println("Enter publisher to find the costly book: ");
                         String st = scanner.nextLine();
                         Optional<Book> maxPriceBook = libraryService.findMaxPrice(st);
-                        maxPriceBook.ifPresentOrElse(System.out::println, () -> System.out.println("No books found for the publisher."));
+                        maxPriceBook.ifPresentOrElse(book -> System.out.println(book.toString()), () -> System.out.println("No books found for the publisher."));                        break;
                         break;
                     case 5:
                         System.out.println("Exiting admin.");
